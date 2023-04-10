@@ -1,0 +1,42 @@
+package com.orangehrmpackage;
+
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import com.ice_crm_automation.utility.BaseClass;
+import com.ice_crm_automation.utility.PropertyHandling;
+import com.orangehrm.pages.MyInfoPage;
+import com.orangehrm.pages.orangehrmloginpage;
+
+public class FileUpload extends BaseClass {
+
+	orangehrmloginpage loginpage;
+	MyInfoPage myinfopage;
+	PropertyHandling phandling;
+	
+	@BeforeClass
+	public void beforeclass()
+	{
+	loginpage =new orangehrmloginpage();
+	myinfopage=new MyInfoPage();
+	phandling=new PropertyHandling();
+	String username=phandling.getProperty("orangeun");
+	String password=phandling.getProperty("orangepw");
+	String browser=phandling.getProperty("browser");
+	String url=phandling.getProperty("orabgehrmurl");
+	launchbrowser(browser);
+	driver.get(url);
+	loginpage.login(username, password);
+	}
+
+	@Test
+	public void fileupload()
+	{
+		click(myinfopage.myinfoMenu);
+		click(myinfopage.profileImg);
+		click(myinfopage.addImg);
+		this.fileupload("C:\\Users\\tanvi\\OneDrive\\Documents\\fileupload.exe");
+	}
+	
+	
+}

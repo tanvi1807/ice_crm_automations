@@ -1,0 +1,14 @@
+package com.orangehrmpackage;
+
+public class FileUpload {
+
+	
+	
+	@Test
+	public void test()
+	{
+		
+	}
+	
+	
+}

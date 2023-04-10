@@ -1,0 +1,23 @@
+package com.ice_crm_automation.loginpage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.ice_crm_automation.pages.loginpage;
+import com.ice_crm_automation.utility.BaseClass;
+import com.ice_crm_automation.utility.PropertyHandling;
+
+public class EmployeeTest extends BaseClass {
+	
+	public class LoginTest extends BaseClass
+	{
+		
+	    PropertyHandling property;
+	    loginpage loginPage;
+	    
+	    LoginTest()
+	    {
+	      PageFactory.initElements(driver,this);    	    
+	    }
+}

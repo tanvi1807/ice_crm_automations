@@ -1,0 +1,8 @@
+package com.orangehrm.pages;
+
+import org.openqa.selenium.By;
+
+public class MyInfoPage {
+	public By myinfoMenu=By.xpath("//span[text()='My Info']");
+	public By myinfoMenu=By.xpath("//span[text()='My Info']");
+}

@@ -1,0 +1,12 @@
+package com.ice_crm_automation.pages;
+
+import com.ice_crm_automation.utility.BaseClass;
+
+public class emppage extends BaseClass{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

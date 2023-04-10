@@ -1,0 +1,16 @@
+package com.orangehrmpackage;
+
+import org.testng.annotations.Test;
+
+public class FileUpload {
+
+	
+	
+	@Test
+	public void test()
+	{
+		
+	}
+	
+	
+}

@@ -1,0 +1,52 @@
+package com.ice_crm_automation.loginpage;
+
+import org.testng.annotations.Test;
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+
+
+import com.ice_crm_automation.pages.loginpage;
+import com.ice_crm_automation.utility.BaseClass;
+import com.ice_crm_automation.utility.PropertyHandling;
+
+	public class LoginTest extends BaseClass
+	{
+	    PropertyHandling property;
+	    loginpage loginPage;
+	    
+  @BeforeClass
+ public void start()
+  {
+	 property = new PropertyHandling();
+	 lunchbrowser(property.getProperty("browser"));
+	 driver.get(property.getProperty("icecrmurl"));
+	 loginPage = new loginpage(driver);
+  }
+  @Test(dataProvider = "getLoginData")
+  public void verifyLogin(String username, String password, String errorMsg)
+  {
+	  loginPage.login(username, password);
+	  if (!username.isEmpty() && !password.isEmpty()) 
+	  {
+		  String errorMessage = driver.findElement(loginPage.errorMsg).getText();
+		  Assert.assertEquals(errorMessage, errorMsg);
+	  }
+  }
+ @DataProvider
+ 	public Object[][] getLoginData()
+ 	{
+	 Object[][] data = new Object[][]
+	 {
+   {"admin123", "admin", "Login failed"},
+//	    {"admin", "admin124", "Login failed"},
+////	    {"admin123", "2zuzfakn", "Login failed"},
+////	    {"", "", ""},
+////	    {"", "2zuzfakn", ""},
+//        {"admin", "", ""}
+	  };
+	   return data;
+	}
+ 
+}
+
