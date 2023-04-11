@@ -1,0 +1,5 @@
+package com.ice_crm_automation.utility;
+
+public interface IRetryAnalyzer {
+
+}

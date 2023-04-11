@@ -1,0 +1,28 @@
+package com.ice.crmAutomation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+
+public class practis {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.edge.driver", "C:\\Users\\tanvi\\eclipse-workspace\\ice_crm_automation\\egdedriver.exe");
+				WebDriver driver1=new EdgeDriver();
+driver1.get("https://www.flipkart.com/");
+
+WebElement username=driver1.findElement(By.id("username"));
+username.sendKeys("tanvi.manoli");;
+
+
+WebElement password= driver1.findElement(By.id("password"));
+password.sendKeys("tanvigaurav2618");
+
+WebElement loginButton= driver1.findElement(By.xpath("//button[contains(text(),'Log in')]"));
+loginButton.click();
+	}
+
+}

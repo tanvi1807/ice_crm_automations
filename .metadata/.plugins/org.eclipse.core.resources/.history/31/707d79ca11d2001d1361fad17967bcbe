@@ -1,0 +1,20 @@
+package com.orangehrm.pages;
+
+import org.openqa.selenium.By;
+
+import com.ice_crm_automation.utility.BaseClass;
+
+public class orangehrmloginpage extends BaseClass
+{
+	By username= By.name("username");
+	By password= By.name("password");
+	By loginButton= By.xpath("//button[@type='submit']");
+	
+	public void login (String username,String passsword)
+	{
+		entertext(this.username,username);
+		entertext(this.password,passsword);
+		click(loginButton);
+	}
+	
+}

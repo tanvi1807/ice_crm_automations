@@ -1,0 +1,54 @@
+package testngpackage;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import com.ice_crm_automation.utility.BaseClass;
+
+public class FinalLoginTestCases extends BaseClass{
+	 @BeforeClass
+	    public void beforeClass(){
+	        
+	        
+	   	 System.out.println("luanching the browser");
+	   	 lunchbrowser("edge");
+		 driver.navigate().to("https://cybersuccess.icehrm.com/");
+	    }
+	    @AfterClass
+	    
+//	    public void afterClass(){
+//	       
+//	        // close the browser instance
+//	      driver.close();
+//	    }
+
+	    @Test
+	    public void verifyLoginWithValidCred(){
+	        System.out.println("This is add emp test method");
+	        entertext(By.id("username"),"admin");
+	   	 entertext(By.id("password"),"2zuzfakn");
+	   	click(By.xpath("//button[contains(text(),'Log in')]")); // click on login button
+	        // verify login successfully
+//	        click(By.xpath("//span[text()='I ']")); 
+//	   	 click(By.xpath("//div[@class='pull-right']/a")); //logout from application
+	 
+	//    admin=dashboard
+	    	
+	    	click(By.xpath("//*[@id=\"admin_Admin\"]/li[1]/a"));
+	    	//dashboard=admin
+	    	click(By.id("employeeLink"));
+	    	driver.navigate().back();
+	    	//dashboard=company status
+	    	click(By.id("companyLink"));
+	    	driver.navigate().back();
+	    	click(By.id("usersLink"));
+	    	//adding user 
+	    	click(By.xpath("//button[@class='btn btn-small btn-primary']"));
+	    	click(B.id("email"));
+	    	
+	    	
+	    }  	
+	    
+}

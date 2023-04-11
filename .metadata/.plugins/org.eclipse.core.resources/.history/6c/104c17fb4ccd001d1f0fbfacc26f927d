@@ -1,0 +1,20 @@
+package com.ice.crmAutomation;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
+
+public class multiselectdropdown {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.egde.driver","C:\\Users\\tanvi\\eclipse-workspace\\ice_crm_automation\\msedgedriver.exe");
+		WebDriver driver = new EdgeDriver();
+		driver.navigate().to("https://mdboostrap.com/docs/standard/extended/multiselect/");
+//		WebDriverManager.firefoxdriver().setup();
+//		WebDriver driver =new FirefoxDriver();
+//		driver.get("https://www.amazon.in");
+		WebElement multiselectdropdown=driver.findElement(By.xpath)
+	}
+
+}

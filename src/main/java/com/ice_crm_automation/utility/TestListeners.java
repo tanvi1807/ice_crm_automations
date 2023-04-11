@@ -53,12 +53,14 @@ public class TestListeners extends BaseClass implements ITestListener, ISuiteLis
         System.out.println("This is onFinish of ITestContext from TestListeners");
     }
 
+    
     @Override
-    public void onTestStart(ITestResult result) {
-        System.out.println("This is onTestStart of ITestResult from TestListeners");
-       String methodName = result.getMethod().getMethodName();
-       log = extentReports.createTest(methodName);
-    }
+	public void onTestStart(ITestResult result) {
+		System.out.println("This is onTestStart of ITestResult from TestListners");
+		String methodName = result.getMethod().getMethodName();
+		ExtentTestManager.createTest(methodName);
+		
+	}
 
     @Override
     public void onTestSuccess(ITestResult result) {
@@ -68,16 +70,18 @@ public class TestListeners extends BaseClass implements ITestListener, ISuiteLis
     @Override
     public void onTestFailure(ITestResult result) {
         System.out.println("This is onTestFailure of ITestResult from TestListeners");
-        String screenshot= reportPath+"/"+ result.getMethod().getMethodName()+".jpg";
-        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
-        File srcFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
-        File dstFile =  new File(screenshot);
-        try {
-            FileUtils.copyFile(srcFile, dstFile);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        log.fail(result.getThrowable().getMessage());
+
+		ExtentTestManager.getTest().fail(result.getThrowable());
+//        String screenshot= reportPath+"/"+ result.getMethod().getMethodName()+".jpg";
+//        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+//        File srcFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
+//        File dstFile =  new File(screenshot);
+//        try {
+//            FileUtils.copyFile(srcFile, dstFile);
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//        log.fail(result.getThrowable().getMessage());
 
 
     }

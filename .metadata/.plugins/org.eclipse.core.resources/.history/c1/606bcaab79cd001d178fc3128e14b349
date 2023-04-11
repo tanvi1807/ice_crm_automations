@@ -1,0 +1,40 @@
+package com.icehrm_automation.pages;
+
+import com.icehrm_automation.utility.BaseClass;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class LoginPage extends BaseClass {
+    // Declare all the locators
+    By username = By.name("username");
+    By password = By.name("password");
+    By loginButton = By.xpath("//button[contains(text(), 'Log in')]");
+    By restPasswordLink = By.xpath("//a[contains(text(),'Reset Password')]");
+    public By errorMsg = By.xpath("//div[contains(@class, 'alert-danger')]");
+
+    public void login(String username, String password){
+        enterText(this.username, username);
+        enterText(this.password, password);
+        click(loginButton);
+    }
+    //Reusable methods for login module
+
+}
+LoginPage.java
+POM Framework Implementation
+Automation Training
+•
+Mar 23
+1. Attached in the screenshot for folder structure.
+
+Screenshot 2023-03-23 at 12.28.26 PM.png
+Image
+
+LoginPage.java
+Java
+
+LoginTest.java
+Java
+Class comments
+
+

@@ -1,0 +1,31 @@
+package com.orangehrm.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.ice_crm_automation.utility.BaseClass;
+
+public class orangehrmloginpage extends BaseClass
+{
+	
+	WebDriver driver;
+	public orangehrmloginpage(WebDriver driver)
+	{
+		super.driver=driver;
+	}
+
+	
+	//By username= By.name("orangeun");
+	//By password= By.name("orangepw");
+	By loginButton= By.xpath("//button[@type='submit']");
+	
+	
+	public void login (String username,String password)
+	{
+		entertext(this.username,username);
+		entertext(this.password,password);
+		click(loginButton);
+		driver.get("https://opensource-demo.orangehrmlive.com/");
+	}
+	
+}

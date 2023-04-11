@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value=""/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="lunch"/>
+			<item value="is"/>
+			<item value="i"/>
+			<item value="Chrome"/>
+			<item value=" year"/>
+			<item value="sample1"/>
+			<item value="findEmelen"/>
+			<item value="//div[@class=&apos;ant-picker-cell-inner&apos;"/>
+			<item value="current"/>
+			<item value="thread"/>
+			<item value="column"/>
+			<item value="home"/>
+		</list>
+		<list key="replacehistory">
+			<item value="sample2"/>
+			<item value="findElements"/>
+			<item value="driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1358"/>
+		<item key="DIALOG_Y_ORIGIN" value="204"/>
+		<item key="DIALOG_WIDTH" value="511"/>
+		<item key="DIALOG_HEIGHT" value="523"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

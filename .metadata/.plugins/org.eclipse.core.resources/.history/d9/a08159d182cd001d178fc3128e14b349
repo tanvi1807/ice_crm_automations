@@ -1,0 +1,10 @@
+package com.ice_crm_automation.utility;
+
+public class BaseClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

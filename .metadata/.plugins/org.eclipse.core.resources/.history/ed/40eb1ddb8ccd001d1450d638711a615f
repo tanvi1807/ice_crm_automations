@@ -1,0 +1,75 @@
+package com.ice_crm_automation.loginpage;
+
+import org.testng.annotations.Test;
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
+
+
+import com.ice_crm_automation.pages.loginpage;
+import com.ice_crm_automation.utility.BaseClass;
+import com.ice_crm_automation.utility.PropertyHandling;
+
+	public class LoginTest extends BaseClass
+	{
+	    PropertyHandling property;
+	    loginpage loginPage;
+	    
+  @BeforeClass
+ public void start()
+  {
+	 property = new PropertyHandling();
+	 lunchbrowser(property.getProperty("browser"));
+	 driver.get(property.getProperty("icehrmUrl"));
+	 loginPage = new loginpage ();
+  }
+  @Test(dataProvider = "getLoginData")
+  public void verifyLogin(String username, String password, String errorMsg)
+  {
+	  loginPage.login(username, password);
+	  if (!username.isEmpty() && !password.isEmpty()) 
+	  {
+		  String errorMessage = driver.findElement(loginPage.errorMsg).getText();
+		  Assert.assertEquals(errorMessage, errorMsg);
+	  }
+  }
+// @DataProvider
+// 	public Object[][] getLoginData()
+// 	{
+//	 Object[][] data = new Object[][]
+//	 {
+//	    {"admin123", "admin", "Login failed"},
+//	    {"admin", "admin124", "Login failed"},
+//	    {"admin123", "2zuzfakn", "Login failed"},
+//	    {"", "", ""},
+//	    {"", "2zuzfakn", ""},
+//        {"admin", "", ""}
+//	  };
+	   return data;
+	}
+ By restPasswordLink = By.xpath("//a[contains(text(),'Reset Password')]");
+ public By errorMsg = By.xpath("//div[contains(@class, 'alert-danger')]");
+
+ @FindBy(name = "username")
+ public WebElement username;
+
+ @FindBy(name = "password")
+ public WebElement password;
+
+ @FindBy(xpath = "//button[contains(text(), 'Log in')]")
+ public WebElement loginButton;
+ public LoginPage(WebDriver driver){
+     PageFactory.initElements(driver,this);
+ }
+ public void login(String username, String password) {
+//     enterText(this.username, username);
+//     enterText(this.password, password);
+//     click(loginButton);
+     this.username.sendKeys(username);
+     this.password.sendKeys(password);
+     this.loginButton.click();
+ }
+ //Reusable methods for login module
+}
+}
+
