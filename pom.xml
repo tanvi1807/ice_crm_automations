@@ -3,11 +3,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>automation</groupId>
-  <artifactId>ice_hrm_automation</artifactId>
+  <artifactId>ice_crm_automations</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
-
-  <name>ice_hrm_automation</name>
+  <name>ice_crm_automations</name>
   <url>http://maven.apache.org</url>
 
   <properties>
