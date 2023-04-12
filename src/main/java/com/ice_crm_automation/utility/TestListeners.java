@@ -29,10 +29,10 @@ public class TestListeners extends BaseClass implements ITestListener, ISuiteLis
         {
             file.mkdir();  // create folder based on provided folder path
         }
-        String htmlReport = reportPath+ "/AutomationReport.html";
-        ExtentSparkReporter sparkReporter = new ExtentSparkReporter(htmlReport);
-        extentReports = new ExtentReports();
-        extentReports.attachReporter(sparkReporter);
+//        String htmlReport = reportPath+ "/AutomationReport.html";
+//        ExtentSparkReporter sparkReporter = new ExtentSparkReporter(htmlReport);
+//        extentReports = new ExtentReports();
+//        extentReports.attachReporter(sparkReporter);
     }
 
     @Override
