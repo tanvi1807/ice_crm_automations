@@ -1,6 +1,9 @@
 package com.ice_crm_automation.utility;
 
-	import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+	import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 	import org.apache.poi.ss.usermodel.Cell;
 	import org.apache.poi.ss.usermodel.CellType;
 	import org.apache.poi.ss.usermodel.Sheet;
@@ -8,10 +11,6 @@ package com.ice_crm_automation.utility;
 	import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 	import org.testng.annotations.DataProvider;
 	import org.testng.annotations.Test;
-
-	import java.io.FileInputStream;
-	import java.io.FileNotFoundException;
-	import java.io.IOException;
 
 	public class exelutil {
 	
