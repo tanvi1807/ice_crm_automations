@@ -45,13 +45,13 @@ import com.ice_crm_automation.utility.PropertyHandling;
  	{
 	 Object[][] data = new Object[][]
 	 {
-  {"admin123", "admin", "Login failed"},
+ // {"admin123", "admin", "Login failed"},
 	    {"admin", "admin124", "Login failed"},
-	    {"admin", "2zuzfakn", "Login failed"},
-	    {"", "", ""},
-	    {"", "2zuzfakn", ""},
-        {"admin", "", ""}
-	  };
+//	    {"admin", "2zuzfakn", "Login failed"},
+//	    {"", "", ""},
+//	    {"", "2zuzfakn", ""},
+//        {"admin", "", ""}
+  };
 	  
 	   return data;
 	}

@@ -1,9 +1,13 @@
 package com.ice_crm_automation.utility;
 
 import java.io.File;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestContext;
@@ -29,10 +33,10 @@ public class TestListeners extends BaseClass implements ITestListener, ISuiteLis
         {
             file.mkdir();  // create folder based on provided folder path
         }
-//        String htmlReport = reportPath+ "/AutomationReport.html";
-//        ExtentSparkReporter sparkReporter = new ExtentSparkReporter(htmlReport);
-//        extentReports = new ExtentReports();
-//        extentReports.attachReporter(sparkReporter);
+      String htmlReport = reportPath+ "/AutomationReport.html";
+        ExtentSparkReporter sparkReporter = new ExtentSparkReporter(htmlReport);
+        extentReports = new ExtentReports();
+        extentReports.attachReporter(sparkReporter);
     }
 
     @Override
@@ -70,16 +74,16 @@ public class TestListeners extends BaseClass implements ITestListener, ISuiteLis
         System.out.println("This is onTestFailure of ITestResult from TestListeners");
 
 		ExtentTestManager.getTest().fail(result.getThrowable());
-//        String screenshot= reportPath+"/"+ result.getMethod().getMethodName()+".jpg";
-//        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
-//        File srcFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
-//        File dstFile =  new File(screenshot);
-//        try {
-//            FileUtils.copyFile(srcFile, dstFile);
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//        log.fail(result.getThrowable().getMessage());
+        String screenshot= reportPath+"/"+ result.getMethod().getMethodName()+".jpg";
+        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+        File srcFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
+        File dstFile =  new File(screenshot);
+        try {
+            FileUtils.copyFile(srcFile, dstFile);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        log.fail(result.getThrowable().getMessage());
 
 
     }
