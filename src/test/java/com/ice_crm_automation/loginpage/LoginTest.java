@@ -7,8 +7,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 
+import com.ice_crm_automation.pages.Loginpage;
 
-import com.ice_crm_automation.pages.loginpage;
 import com.ice_crm_automation.utility.BaseClass;
 import com.ice_crm_automation.utility.PropertyHandling;
  
@@ -16,19 +16,16 @@ import com.ice_crm_automation.utility.PropertyHandling;
 	{
 		
 	    PropertyHandling property;
-	    loginpage loginPage;
+	    Loginpage loginPage;
 	    
-	    LoginTest()
-	    {
-	      PageFactory.initElements(driver,this);    	    
-	    }
+	  
   @BeforeClass
  public void start()
   {
 	 property = new PropertyHandling();
 	 launchbrowser(property.getProperty("browser"));
 	 driver.get(property.getProperty("icecrmurl"));
-	 loginPage = new loginpage(driver);
+	 loginPage = new Loginpage(driver);
   }
   @Test(dataProvider = "getLoginData")
   public void verifyLogin(String username, String password, String errorMsg)
@@ -36,7 +33,7 @@ import com.ice_crm_automation.utility.PropertyHandling;
 	  loginPage.login(username, password);
 	  if (!username.isEmpty() && !password.isEmpty()) 
 	  {
-		  String errorMessage = driver.findElement(loginPage.errorMsg).getText();
+		 String errorMessage = driver.findElement(loginPage.errorMsg).getText();
 		  Assert.assertEquals(errorMessage, errorMsg);
 	  }
   }
@@ -45,12 +42,12 @@ import com.ice_crm_automation.utility.PropertyHandling;
  	{
 	 Object[][] data = new Object[][]
 	 {
- // {"admin123", "admin", "Login failed"},
+ {"admin123", "admin", "Login failed"},
 	    {"admin", "admin124", "Login failed"},
-//	    {"admin", "2zuzfakn", "Login failed"},
-//	    {"", "", ""},
-//	    {"", "2zuzfakn", ""},
-//        {"admin", "", ""}
+    {"admin", "2zuzfakn", "Login success"},
+	    {"", "", ""},
+	    {"", "2zuzfakn", ""},
+        {"admin", "", ""}
   };
 	  
 	   return data;
