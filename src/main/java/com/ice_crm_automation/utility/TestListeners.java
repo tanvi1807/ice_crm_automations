@@ -22,6 +22,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 public class TestListeners extends BaseClass implements ITestListener, ISuiteListener {
     String reportPath;
     ExtentReports extentReports;
+    ExtentReportManager extreport;
     @Override
     public void onStart(ISuite suite) {
         System.out.println("This is onStart of ISuite form TestListeners");

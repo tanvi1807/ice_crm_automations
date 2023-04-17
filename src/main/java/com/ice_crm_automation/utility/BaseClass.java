@@ -152,16 +152,16 @@ public class BaseClass {
 	    	//capture screenshot method
 //	 //   public void Screenshot(String filepath) 
 //	    {
-//	    	try {
+//	    	
 //	    	PropertyHandling phandling=new PropertyHandling();
 //	    	String autoitscript =phandling.getProperty("autoitscript"); 
 //	    	Thread.sleep(1000);
 //	    	Runtime.getRuntime().exec(autoitscript+" "+filepath);
-//			} catch (Exception e) {
+//			 
 //				// TODO Auto-generated catch block
 //				e.printStackTrace();
 //			}
-//	    }
+//	    
 	    
 	   
 	  }

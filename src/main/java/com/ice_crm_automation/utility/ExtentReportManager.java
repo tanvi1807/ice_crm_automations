@@ -6,30 +6,38 @@ import java.io.File;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import org.testng.ITestResult;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 
-public class ExtentReportManager {
+public class ExtentReportManager 
+{
 	public static String reportPath;
 	public static ExtentReports extentReport;
 	
 	//singleton pattern
-	public static ExtentReports getInstance() {
-		if(extentReport == null) {
+	public static ExtentReports getInstance() 
+	{
+		if(extentReport == null) 
+		{
 			setReportDetails();
 		}
 		return extentReport;
 	}
 	
 
-	public static void setReportDetails() {
+	public static void setReportDetails()
+	{
 		LocalDateTime dateTime = LocalDateTime.now();
 		String currentDateTime = dateTime.format(DateTimeFormatter.ofPattern("dd_mm_yyyy_HH_mm"));
-		reportPath = System.getProperty("user.dir") + "/reports/"+ "report_" + currentDateTime;
+//		reportPath = System.getProperty("user.dir") + "/reports/"+ /*"report_" + currentDateTime*/;
+		reportPath = System.getProperty("user.dir") + "/reports/"+currentDateTime;
 		System.out.println("ReportPath is " + reportPath);
 		File file = new File(reportPath);
-		if (!file.exists()) {
+		if (!file.exists()) 
+		{
 			file.mkdir();
 		}
 		  String htmlReport = reportPath+ "AutomationReport.html";
@@ -41,4 +49,8 @@ public class ExtentReportManager {
 	        extentReport.setSystemInfo("environment", "QA");
 	}
 
+	
+
 }
+		 
+	 
